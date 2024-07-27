@@ -7,9 +7,6 @@ import lombok.NonNull;
 import lombok.val;
 import org.springframework.util.ReflectionUtils;
 
-import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -23,7 +20,7 @@ public class BigQueryUtils {
     private BigQueryUtils() {
         throw new IllegalStateException("utility class");
     }
-    
+
     public static String getStringValue(@NonNull FieldValueList row, @NonNull String field) {
         FieldValue value = row.get(field);
         return value.isNull() ? null : value.getStringValue();
