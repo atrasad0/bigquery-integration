@@ -61,8 +61,7 @@ class BigQueryUtilsTest {
     @Test
     @DisplayName("Should throw an error when the field is not found in the class")
     void getFieldColumnName_fieldNotFound() {
-        Assertions.assertThrows(IllegalArgumentException.class, () -> {
-            BigQueryUtils.getFieldColumnName(PeopleTestWithBigQueryColumn.class, "anyField");
-        });
+        Assertions.assertThrows(IllegalArgumentException.class,
+                () -> BigQueryUtils.getFieldColumnName(PeopleTestWithBigQueryColumn.class, "anyField"));
     }
 }
